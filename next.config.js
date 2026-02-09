@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const isGithubPages = process.env.GITHUB_PAGES === "true";
 const repo = process.env.GITHUB_REPOSITORY?.split("/")[1] || "NG-studio";
-const basePath = isGithubPages ? `/${repo}` : "";
+const configuredBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
+const basePath = isGithubPages
+  ? configuredBasePath || `/${repo}`
+  : "";
 const assetPrefix = isGithubPages ? `${basePath}/` : undefined;
 
 const nextConfig = {

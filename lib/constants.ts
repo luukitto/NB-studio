@@ -1,3 +1,6 @@
+const basePath = (process.env.NEXT_PUBLIC_BASE_PATH || "").replace(/\/$/, "");
+const withBasePath = (path: string) => (basePath ? `${basePath}${path}` : path);
+
 export const SITE = {
   name: "NB Beauty Studio",
   tagline: "Beauty • Aesthetics • Professionalism",
@@ -33,38 +36,38 @@ export const OPENING_HOURS_SPEC = [
 ];
 
 // Place your logo in public/logo.png.
-export const LOGO_IMAGE = "/logo.png";
+export const LOGO_IMAGE = withBasePath("/logo.png");
 
 // Hero and gallery images (stored in public/gallery).
-export const HERO_IMAGE = "/gallery/hero.png";
+export const HERO_IMAGE = withBasePath("/gallery/hero.png");
 
 export const GALLERY_IMAGES = [
   {
-    src: "/gallery/hero.png",
+    src: withBasePath("/gallery/hero.png"),
     alt: "Studio interior",
   },
   {
-    src: "/gallery/studio-sign.png",
+    src: withBasePath("/gallery/studio-sign.png"),
     alt: "Studio sign with flowers",
   },
   {
-    src: "/gallery/bridal-makeup.png",
+    src: withBasePath("/gallery/bridal-makeup.png"),
     alt: "Bridal makeup portrait",
   },
   {
-    src: "/gallery/hair-color.png",
+    src: withBasePath("/gallery/hair-color.png"),
     alt: "Soft balayage hair color",
   },
   {
-    src: "/gallery/nail-art.png",
+    src: withBasePath("/gallery/nail-art.png"),
     alt: "Glossy nail art",
   },
   {
-    src: "/gallery/reception.png",
+    src: withBasePath("/gallery/reception.png"),
     alt: "Reception area with mirrors",
   },
   {
-    src: "/gallery/storefront.png",
+    src: withBasePath("/gallery/storefront.png"),
     alt: "NB Beauty Studio storefront",
   },
 ];
