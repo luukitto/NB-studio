@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { HERO_IMAGE, LINKS } from "@/lib/constants";
 import { useLanguage } from "@/components/LanguageProvider";
